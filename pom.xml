@@ -1,9 +1,9 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.invicto.tool</groupId>
+    <groupId>com.github.vazeabhishek</groupId>
     <artifactId>json-transformer-util</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>json-transformer-util</name>
     <description>A Library to transform a json string to another.</description>
     <url>>https://github.com/vazeabhishek/json-mapper-util.git</url>
