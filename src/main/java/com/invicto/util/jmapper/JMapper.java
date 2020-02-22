@@ -23,6 +23,7 @@ public class JMapper {
      * Constructor to construct object, takes path as input parameter and
      * reads the contents of file and build a mpping definition out of it
      * Throws exception if file not found
+     *
      * @param path
      * @throws FileNotFoundException
      */
@@ -34,6 +35,7 @@ public class JMapper {
     /**
      * Constructor to construct object, takes a map as a input and uses it as a
      * mapping definition for transforming json objects
+     *
      * @param mappingDef
      */
     public JMapper(Map<String, String> mappingDef) {
@@ -42,6 +44,7 @@ public class JMapper {
 
     /**
      * Takes json string as a input and transforms it into another json structure
+     *
      * @param jsonString
      * @return
      */
@@ -55,6 +58,7 @@ public class JMapper {
      * Takes an input key, parses the map for that key and fetches the associated value  from map,
      * searches that key in mapping defination and fetches the target key from the map
      * add the value to the target map with the target key
+     *
      * @param key
      * @param map
      * @param newValue
@@ -71,14 +75,17 @@ public class JMapper {
                     else
                         map.put(innerKey, newValue);
                 }
-            } else
-                throw new KeyNotFoundException("At " + key);
+            } else {
+                map.put(innerKey, buildMap(keyUtil.findRemainingEndPartOfKey(innerKey), newValue));
+            }
+
         } else
             map.put(key, newValue);
     }
 
     /**
      * Takes an input key, parses the map for that key and fetches the associated value  from
+     *
      * @param key
      * @param map
      * @return
@@ -99,6 +106,7 @@ public class JMapper {
 
     /**
      * build a map for a input key and the value
+     *
      * @param key
      * @param value
      * @return
@@ -114,6 +122,7 @@ public class JMapper {
 
     /**
      * transform structure of one map into other based on the mapping defination.
+     *
      * @param mappingDef
      * @param sourceMap
      * @return
